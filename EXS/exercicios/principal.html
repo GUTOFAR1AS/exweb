@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal - Ferramentas Interativas</title>
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body onload="boasVindas()">
+    <div class="container">
+        <header>
+            <h1>Bem-vindo às Ferramentas Interativas</h1>
+            <p id="boasVindas">Explore funcionalidades úteis e educativas: descubra sua faixa etária e gênero, calcule seu IMC, ou aprenda matemática com a tabuada animada.</p>
+        </header>
+        <main>
+            <section class="card">
+                <h2>Classificação por Idade e Gênero</h2>
+                <p>Descubra em qual faixa etária você se encontra e como ela é associada ao seu gênero. Insira sua idade, escolha seu gênero e veja o resultado com uma imagem representativa.</p>
+                <button onclick="confirmarNavegacao('idadegenero.html')">Acessar Ferramenta</button>
+            </section>
+
+            <section class="card">
+                <h2>Calculadora de IMC</h2>
+                <p>Calcule o Índice de Massa Corporal (IMC) de forma rápida e prática. Descubra se você está em um peso saudável de acordo com seu peso e altura.</p>
+                <button onclick="confirmarNavegacao('imc.html')">Acessar Calculadora</button>
+            </section>
+
+            <section class="card">
+                <h2>Tabuada Animada</h2>
+                <p>Aprenda ou revise a tabuada de maneira divertida e interativa. Insira um número e veja sua tabuada completa!</p>
+                <button onclick="confirmarNavegacao('tabuada.html')">Acessar Tabuada</button>
+            </section>
+            <section class="card">
+                <h2>Conheça Otis Boykin</h2>
+                <p>Saiba mais sobre Otis Boykin, um grande inventor afro-americano cujas contribuições tecnológicas tiveram um impacto significativo, especialmente no desenvolvimento de dispositivos eletrônicos essenciais. Conheça sua história e o legado deixado no dia da Consciência Negra.</p>
+                <button onclick="confirmarNavegacao('biografia.html')">Ver Biografia</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Ferramentas Interativas. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+<script>
+ 
+    function confirmarNavegacao(url) {
+        var confirmacao = confirm("Você tem certeza que deseja acessar esta ferramenta?");
+        if (confirmacao) {
+            window.location.href = url;  
+        }
+    }
+    function boasVindas() {
+        const boasVindasElement = document.getElementById('boasVindas');
+        boasVindasElement.textContent = "Bem-vindo! Explore as ferramentas abaixo.";
+    }
+</script>
+
+</html>

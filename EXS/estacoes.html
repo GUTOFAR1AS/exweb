@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estações do Ano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #3498db;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            background-color: #fff;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #777;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Descubra as Estações do Ano</h1>
+            <p>Selecione um mês para descobrir em qual estação do ano você está!</p>
+        </header>
+        <main>
+            <section class="card">
+                <h2>Selecione o Mês</h2>
+                <select id="mesSelect" onchange="mostrarEstacao()">
+                    <option value="">Escolha um mês</option>
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+            </section>
+            <section id="resultado" class="card">
+                <h2 id="estacao"></h2>
+                <img id="imagemEstacao" src="" alt="Imagem da Estação">
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Ferramentas Interativas. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function mostrarEstacao() {
+            const mes = document.getElementById('mesSelect').value;
+            const estacaoElement = document.getElementById('estacao');
+            const imagemElement = document.getElementById('imagemEstacao');
+
+            if (mes === "1" || mes === "2" || mes === "12") {
+                estacaoElement.textContent = "Verão";
+                imagemElement.src = "verao.webp";
+            } else if (mes === "3" || mes === "4" || mes === "5") {
+                estacaoElement.textContent = "Outono";
+                imagemElement.src = "outono.webp";
+            } else if (mes === "6" || mes === "7" || mes === "8") {
+                estacaoElement.textContent = "Inverno";
+                imagemElement.src = "inverno.jpg";
+            } else if (mes === "9" || mes === "10" || mes === "11") {
+                estacaoElement.textContent = "Primavera";
+                imagemElement.src = "primavera.jpg";
+            } else {
+                estacaoElement.textContent = "";
+                imagemElement.src = "";
+            }
+
+            imagemElement.style.display = mes !== "" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

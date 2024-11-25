@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação por Idade e Gênero</title>
+    <link rel="stylesheet" href="idadegenero.css">
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='principal.html'">Inicio</button>
+        <button onclick="window.location.href='tabuada.html'">Ir para Tabuada</button>
+        <button onclick="window.location.href='imc.html'">Tabuada IMC</button>
+        <button onclick="window.location.href='biografia.html'">Biografia</button>
+        <h1>Verifique sua Faixa Etária e Gênero</h1>
+        <p>Insira sua idade, selecione o gênero e veja sua faixa etária.</p>
+        <input type="number" id="idadeInput" placeholder="Digite sua idade" />
+        <select id="generoSelect">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+        <button onclick="verificarIdadeGenero()">Verificar</button>
+        <p id="resultado"></p>
+        <p id="mensagem"></p>
+        <img id="imagem" src="" alt="Imagem da Faixa Etária" style="display: none; width: 400px; margin-top: 20px;" />
+    </div>
+    <script src="idadegenero.js"></script>
+</body>
+</html>
